@@ -1,0 +1,8 @@
+<div align='center'>
+  <h1> Add Comment </h1>
+  <%= form_with model: @comments, url: comment_path  do |form| %>
+    <%= form.label :comment %> &nbsp;&nbsp;
+    <%= form.text_field :comment %> <br><br>
+    <%= form.submit 'Add Comment' %>
+  <% end %>
+</div>

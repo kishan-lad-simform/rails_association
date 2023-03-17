@@ -1,0 +1,22 @@
+<div align='center'> 
+  <%= link_to 'Back', users_path %>
+  <h1>List of Events with Comments</h1><br>
+  <br>
+  <table border=1>
+    <thead>
+      <tr>  
+        <th> Comments</th>
+        <th> Operation </th>        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <td> <%= comment.comment %> </td>
+          <td> <%= link_to 'like', like_path(comment.id) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

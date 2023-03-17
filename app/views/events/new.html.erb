@@ -1,0 +1,20 @@
+<div align='center'>
+	<h1>Add Events page</h1>
+	<%= form_with model: @event do |form| %>
+		<%= form.label 'Event Name', :name %>
+		<%= form.text_field :name %> <br><br>
+
+		<%= form.label 'Description', :description %>
+		<%= form.text_field :description %> <br><br>
+		
+		<%= form.label 'Event date', :event_date %>
+		<%= form.date_field :event_date %> <br><br>
+
+		<%= form.label 'Event Category', :category_name %>
+		<%= form.select :category_id, @categories %> <br><br>
+
+    <%= form.hidden_field :user_id, value: session[:user_id] %>
+		
+    <%= form.submit 'Create' %>
+	<% end %>
+</div>

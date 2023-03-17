@@ -1,0 +1,38 @@
+<div align='center'> 
+  <%= link_to 'Back', users_path %>
+
+  <h1>Profile</h1>
+  <table border=1>
+    <thead>
+      <tr>  
+        <th> Name </th>
+        <th> Email </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @user.name %> </td>
+        <td> <%= @user.email %> </td>
+      </tr>
+    </tbody>
+  </table> <br><br>
+
+  <h2> Enrolled Events </h2>
+   <table border=1>
+    <thead>
+      <tr>  
+        <th> Event Name </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @enrolled_events.each do |e| %>
+        <tr>
+          <td> <%= e.name %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  
+</div>

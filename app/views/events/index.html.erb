@@ -1,0 +1,33 @@
+<div align='center'> 
+  <%= link_to 'Login', login_path %>
+  <h1>List of Events</h1><br>
+
+  <%= form_with(url: "events/filter") do |form| %>
+    <%= form.label "Event Category", :category_name %>
+    <%= form.select :category_id, @categories %>&nbsp;
+    <%= form.submit "filter", class: "btn btn-primary" %> &nbsp; &nbsp;
+    <%= link_to 'Refresh', events_path ,class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <table border=1>
+    <thead>
+      <tr>  
+        <th> Event Name </th>
+        <th> Description </th>
+        <th> Event date </th>    
+        <th> Event Category </th>    
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |e| %>
+        <tr>
+          <td> <%= e.name %> </td>
+          <td> <%= e.description %> </td>
+          <td> <%= e.event_date %> </td>
+          <td> <%= e.category.category_name%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

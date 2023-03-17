@@ -1,0 +1,19 @@
+<div align="center">
+  <h2> Add User </h2>
+  <%= form_with model: @user do |form| %>
+    <%= form.label 'Name' %>
+    <%= form.text_field :name %><br><br>
+
+    <%= form.label 'Address' %>
+    <%= form.text_area :address, size: "50x5" %><br><br>
+
+    <%= form.label 'Email' %>
+    <%= form.text_field :email %><br><br>
+
+    <%= form.label 'Password' %>
+    <%= form.password_field :password %> <br><br>
+
+    <%= form.submit 'Add User' %><br><br>
+    <%= link_to 'Back', login_path  %>
+  <% end %>
+</div>

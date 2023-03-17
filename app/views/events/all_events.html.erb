@@ -1,0 +1,30 @@
+<div align='center'> 
+  <%= link_to 'Back', users_path %>
+  <h1>List of Events</h1><br>
+  <br>
+  <table border=1>
+    <thead>
+      <tr>  
+        <th> Event Name </th>
+        <th> Description </th>
+        <th> Event date </th>    
+        <th> Event Category </th>   
+        <th colspan=2> Action </th> 
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |e| %>
+        <tr>
+          <td> <%= e.name %> </td>
+          <td> <%= e.description %> </td>
+          <td> <%= e.event_date %> </td>
+          <td> <%= e.category.category_name %> </td>
+          <td> <%= link_to 'Comment', comment_path(e) %> </td>
+          <td> <%= link_to 'Enroll', enroll_path(e.id) %> </td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
